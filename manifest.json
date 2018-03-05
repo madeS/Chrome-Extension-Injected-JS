@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "Injected Ext",
+    "version": "0.1.0.1",
+    "description": "Your personal developer extension",
+    
+    "permissions": [
+        "tabs",
+        "http://example.com/*",
+        "https://vk.com/*",
+        "webRequest",
+        "webRequestBlocking"
+    ],
+    "content_scripts": [
+        {
+            "matches": [ "http://*/*", "https://*/*" ],
+            "js": [ 
+                "js/jquery-1.11.2.min.js", 
+                "js/background.js" 
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "web_accessible_resources": [
+        "js/injected.js"
+    ]
+}
